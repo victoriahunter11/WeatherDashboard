@@ -1,0 +1,30 @@
+#jumbo {
+    background-color: #21325A;
+    color:white;
+    text-align: center;
+   }
+   
+   .border{
+       padding: 10px;
+   }
+
+   #cityLists {
+       width:35%;
+       border-color:black thin;
+       align-content:left;
+       border-style: solid;
+
+   }
+
+   
+   #currentCity {
+        margin-left: 6px;
+       border: black thin;
+       width:55%;
+       border-style: solid;
+       
+   }
+
+   #searchForm {
+       width:40%;
+   }
