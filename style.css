@@ -3,7 +3,9 @@
     color:white;
     text-align: center;
    }
-   
+   body {
+       background-color: rgb(238, 239, 241)
+   }
    .border{
        padding: 10px;
    }
@@ -17,15 +19,19 @@
    #fiveDay {
     width:65%;
     float:right;
+    padding-bottom:30px;
 
 }
 
    
    #currentCity {
         margin-left: 6px;
-       border: black thin;
+       border: #d2d5d8 thin;
        width:55%;
        border-style: solid;
+       background-color:white;
+       border-radius: 3px;
+       padding:30px;
        
    }
 
@@ -39,11 +45,22 @@
     width: 60px;
 }
 .card-body {
-    background: #fff;
+    background: #5a94eb;
     border-radius: 3px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
     border:white;
     margin-top:20px;
+    color:white;
+}
+.card-body:hover {
+    background: #9fbbe6;
+}
+
+h3 {
+    text-align:right;
+    width:65%;
+    padding-top:20px;
+
 }
