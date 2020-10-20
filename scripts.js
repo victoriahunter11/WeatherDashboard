@@ -11,7 +11,7 @@ var cityName = $('#searchTerm').val()
 console.log(cityName);
 
 //Weather API
-var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' +cityName + '&appid=6db34ef713e549526f3d19aba8df78ca'
+var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' +cityName + '&appid=6db34ef713e549526f3d19aba8df78ca&units=imperial'
 
 console.log('queryURL:', queryURL);
 
@@ -41,7 +41,7 @@ $.ajax({
     
     //5 day forecast
 
-    var queryURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=6db34ef713e549526f3d19aba8df78ca'
+    var queryURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=6db34ef713e549526f3d19aba8df78ca&units=imperial'
     
     
     console.log('queryURL:', queryURL);
@@ -60,7 +60,7 @@ $.ajax({
         console.log('temp:', temp);
         console.log('humidity:', humidity);
         $('#currentDate1').text(date);
-        $('#temp1').text(temp);
+        $('#temp1').text(temp1);
         $('#humidity1').text('humidity: ' + humidity +'%');
         $('#icon1').attr('src', icon)
 
@@ -113,6 +113,8 @@ $.ajax({
         $('#humidity5').text('humidity: ' + humidity5 + '%');
         $('#icon5').attr('src', icon)
 
+
+        //converting temo
     })
 
   });
