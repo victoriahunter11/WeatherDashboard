@@ -26,6 +26,10 @@
 
 }
 
+#searchBtn:hover {
+    background: #d3e2f8;
+}
+
    
    #currentCity {
         margin-left: 6px;
