@@ -33,22 +33,44 @@
             <form class="pl-3" id="searchForm">
                 <div class ="form-group border border-dark" >
                 <label for="searchTerm"> Search Term:</label>
-                <input type="text" class="col-12" id="searchTerm"><br></input><br>
-                <button type="searchBtn" class="btn btn-primary btn-sm">Search</button>
+                <input type="text" class="col-12" id="searchTerm" placeholder="city"><br></input><br>
+                <button type="searchBtn" id="searchBtn" class="btn btn-primary btn-sm">Search</button>
                 </div>
             </form>
 
             <div id= "currentCity" class="pl-3">
                 Current City
-            </div>
-    </div>
-    <ul class="cityLists" id="cityLists">
+                <br>
+                <br>
+                Temperature: <span id='temp' > </span><br>
+                Humidity: <span id='humidity'> </span><br>
+                Wind: <span id='wind'></span><br>
+             </div>
+             <br>
+            
+         <ul class="cityLists" id="cityLists">
                 <li class="list-item" id="city1"></li>
                 <li class="list-item" id="city2"></li>
                 <li class="list-item" id="city3"></li>
                 <li class="list-item" id="city4"></li>
                 <li class="list-item" id="city5"></li>
             </ul>
+
+            
+    <div id="card" class ="pl-3">
+      <div class="card-body">
+        <h6 class="card-title">
+          
+          <span id='temp'>Temperature</span><br>
+          <span id='humiditiy'>Humidity</span>
+
+        </h6>
+        
+      </div>
+      <ul class="cityLists" id="cityLists">
+        </div>
+     
+          </div>
 
 
     <script
@@ -66,6 +88,9 @@
       crossorigin="anonymous"
     ></script>
 
+
+
+      <script src="scripts.js"></script>
     
 
     
