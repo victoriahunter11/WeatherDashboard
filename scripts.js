@@ -38,7 +38,7 @@ $.ajax({
     $('#icon').attr('src', icon);
 
      
-   //UV INDEX ATTEMPT 
+   /* UV INDEX ATTEMPT 
    var latitude = response.coord.lat;
    var longitude = response.coord.long;
    //UV index 
@@ -51,7 +51,7 @@ $.ajax({
    }).then(function (response) {
        console.log('response:', response);
 
-
+*/
        
     //5 day forecast
 
@@ -134,5 +134,5 @@ $.ajax({
 
 })
 
-})
+//})
 });
