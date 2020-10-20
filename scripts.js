@@ -25,20 +25,34 @@ $.ajax({
     var humidity = response.main.humidity;
     var wind = response.wind.speed;
     var cityName = response.name;
+    var icon = 'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png';
+
     var date = new Date().toLocaleDateString()
     console.log(date)
 
     $('#cityName').text(cityName + ':');
     $('#currentDate').text(date);
-    $('#temp').text(temp);
-    $('#humidity').text(humidity);
-    $('#wind').text(wind);
+    $('#temp').text('Temperature: '+ temp + ' F');
+    $('#humidity').text('Humidity: '+ humidity + '%');
+    $('#wind').text('Wind: '+ wind + ' MPH');
+    $('#icon').attr('src', icon);
+
+     
+   //UV INDEX ATTEMPT 
+   var latitude = response.coord.lat;
+   var longitude = response.coord.long;
+   //UV index 
+
+   var queryURL = 'https://api.openweathermap.org/data/2.5/uvi?lat=' + latitude + '&lon=' + longitude + '&appid=6db34ef713e549526f3d19aba8df78ca'
+
+   $.ajax({
+       url: queryURL,
+       method: 'GET',
+   }).then(function (response) {
+       console.log('response:', response);
 
 
-    //latitudes and longitudes
-
-    //UV Index
-    
+       
     //5 day forecast
 
     var queryURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=6db34ef713e549526f3d19aba8df78ca&units=imperial'
@@ -60,7 +74,7 @@ $.ajax({
         console.log('temp:', temp);
         console.log('humidity:', humidity);
         $('#currentDate1').text(date);
-        $('#temp1').text(temp1);
+        $('#temp1').text('temp: ' + temp1 + ' F');
         $('#humidity1').text('humidity: ' + humidity +'%');
         $('#icon1').attr('src', icon)
 
@@ -71,7 +85,7 @@ $.ajax({
         var icon = 'https://openweathermap.org/img/w/' + response.list[7].weather[0].icon + '.png';
         console.log('temp:', temp);
         console.log('humidity:', humidity);
-        $('#temp2').text(temp2);
+        $('#temp2').text('temp: ' +temp2+ ' F');
         $('#humidity2').text('humidity: ' + humidity2 + '%');
         $('#icon2').attr('src', icon)
 
@@ -83,7 +97,7 @@ $.ajax({
         console.log('temp:', temp);
         console.log('humidity:', humidity);
         var icon = 'https://openweathermap.org/img/w/' + response.list[16].weather[0].icon + '.png';
-        $('#temp3').text(temp3);
+        $('#temp3').text('temp: ' +temp3+ ' F');
         $('#humidity3').text('humidity: ' + humidity3 + '%');
         $('#icon3').attr('src', icon)
 
@@ -96,7 +110,7 @@ $.ajax({
         console.log('humidity:', humidity);
         var icon = 'https://openweathermap.org/img/w/' + response.list[24].weather[0].icon + '.png';
         $('#currentDate1').text(date);
-        $('#temp4').text(temp4);
+        $('#temp4').text('temp: ' +temp4+ ' F');
         $('#humidity4').text('humidity: ' + humidity4 + '%');
         $('#icon4').attr('src', icon)
 
@@ -109,17 +123,16 @@ $.ajax({
         console.log('humidity:', humidity);
         var icon = 'https://openweathermap.org/img/w/' + response.list[32].weather[0].icon + '.png';
         $('#currentDate1').text(date);
-        $('#temp5').text(temp5);
+        $('#temp5').text('temp: ' +temp5+ ' F');
         $('#humidity5').text('humidity: ' + humidity5 + '%');
-        $('#icon5').attr('src', icon)
+        $('#icon5').attr('src', icon);
 
-
-        //converting temo
+   
     })
 
   });
 
 })
 
-
+})
 });
