@@ -8,13 +8,17 @@
        padding: 10px;
    }
 
-   #cityLists {
+   .cityLists {
        width:35%;
-       border-color:black thin;
        align-content:left;
-       border-style: solid;
 
    }
+
+   #fiveDay {
+    width:65%;
+    float:right;
+
+}
 
    
    #currentCity {
@@ -41,4 +45,5 @@
     padding: 20px;
     text-align: center;
     border:white;
+    margin-top:20px;
 }

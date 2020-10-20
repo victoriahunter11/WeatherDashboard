@@ -43,6 +43,7 @@ $.ajax({
 
     var queryURL = 'https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&appid=6db34ef713e549526f3d19aba8df78ca'
     
+    
     console.log('queryURL:', queryURL);
 
     $.ajax({
@@ -55,22 +56,24 @@ $.ajax({
         var temp1 = response.list[0].main.temp;
         var humidity1 = response.list[0].main.humidity;
         var date = new Date().toLocaleDateString()
+        var icon = 'https://openweathermap.org/img/w/' + response.list[0].weather[0].icon + '.png';
         console.log('temp:', temp);
         console.log('humidity:', humidity);
         $('#currentDate1').text(date);
         $('#temp1').text(temp);
-        $('#humidity1').text(humidity);
+        $('#humidity1').text('humidity: ' + humidity +'%');
+        $('#icon1').attr('src', icon)
+
 
         //2ndday
-
         var temp2 = response.list[7].main.temp;
         var humidity2 = response.list[7].main.humidity;
-        
+        var icon = 'https://openweathermap.org/img/w/' + response.list[7].weather[0].icon + '.png';
         console.log('temp:', temp);
         console.log('humidity:', humidity);
-        
         $('#temp2').text(temp2);
-        $('#humidity2').text(humidity2);
+        $('#humidity2').text('humidity: ' + humidity2 + '%');
+        $('#icon2').attr('src', icon)
 
         //3rdday
 
@@ -79,9 +82,10 @@ $.ajax({
         
         console.log('temp:', temp);
         console.log('humidity:', humidity);
-        
+        var icon = 'https://openweathermap.org/img/w/' + response.list[16].weather[0].icon + '.png';
         $('#temp3').text(temp3);
-        $('#humidity3').text(humidity3);
+        $('#humidity3').text('humidity: ' + humidity3 + '%');
+        $('#icon3').attr('src', icon)
 
         //4thDay
         
@@ -90,19 +94,24 @@ $.ajax({
         var date = new Date().toLocaleDateString()
         console.log('temp:', temp);
         console.log('humidity:', humidity);
+        var icon = 'https://openweathermap.org/img/w/' + response.list[24].weather[0].icon + '.png';
         $('#currentDate1').text(date);
         $('#temp4').text(temp4);
-        $('#humidity4').text(humidity4);
+        $('#humidity4').text('humidity: ' + humidity4 + '%');
+        $('#icon4').attr('src', icon)
 
+    
         //5thday
 
         var temp5 = response.list[32].main.temp;
         var humidity5 = response.list[32].main.humidity;
         console.log('temp:', temp);
         console.log('humidity:', humidity);
+        var icon = 'https://openweathermap.org/img/w/' + response.list[32].weather[0].icon + '.png';
         $('#currentDate1').text(date);
         $('#temp5').text(temp5);
-        $('#humidity5').text(humidity5);
+        $('#humidity5').text('humidity: ' + humidity5 + '%');
+        $('#icon5').attr('src', icon)
 
     })
 
