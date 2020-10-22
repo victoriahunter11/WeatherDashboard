@@ -72,3 +72,15 @@ h3 {
     padding-top:20px;
 
 }
+
+.good {
+    background-color:green;
+}
+
+.bad {
+    background-color:red;
+}
+
+.moderate {
+    background-color:yellow;
+}

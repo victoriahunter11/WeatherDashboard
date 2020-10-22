@@ -10,8 +10,27 @@ e.preventDefault()
 var cityName = $('#searchTerm').val()
 console.log(cityName);
 
+//List of cities
+var liEl = $('<li class="list-group-item">').text(cityName);
+$('.list-group').append(liEl);
+
+var historyList = JSON.parse(localStorage.getItem('cityList')) || [];
+
+console.log('not push yet',historyList);
+historyList.push(cityName);
+
+// how do you set historyList to local storage?
+
+localStorage.setItem('cityList', JSON.stringify(historyList))
+console.log('push',historyList)
+
+
+
+
+
 //Weather API
-var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' +cityName + '&appid=6db34ef713e549526f3d19aba8df78ca&units=imperial'
+var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' +cityName + '&appid=6db34ef713e549526f3d19aba8df78ca'
+
 
 console.log('queryURL:', queryURL);
 
@@ -38,20 +57,43 @@ $.ajax({
     $('#icon').attr('src', icon);
 
      
-   /* UV INDEX ATTEMPT 
+   //UV INDEX ATTEMPT 
    var latitude = response.coord.lat;
-   var longitude = response.coord.long;
+   var longitude = response.coord.lon;
    //UV index 
 
    var queryURL = 'https://api.openweathermap.org/data/2.5/uvi?lat=' + latitude + '&lon=' + longitude + '&appid=6db34ef713e549526f3d19aba8df78ca'
+    console.log(longitude)
 
    $.ajax({
        url: queryURL,
        method: 'GET',
    }).then(function (response) {
-       console.log('response:', response);
+       console.log('response uv:', response);
 
-*/
+//UV index to HTML page
+       var uvIndex = response.value;
+       console.log('uv',uvIndex)
+       $('#uvIndex').text('UV Index: ' + uvIndex);
+
+       //if uvUnde <= 2 
+        //green or good
+
+    
+        if (uvIndex <=2) {
+            //good
+            console.log('hit good')
+            $('#uvIndex').addClass('bg-success');
+        } else if( uvIndex >= 6){
+            //bad
+            $('#uvIndex').addClass('bg-danger');
+            console.log('hit bad')
+        }else{
+            // moderate
+            $('#uvIndex').addClass('bg-warning');
+            console.log('hit moderate')
+        }
+
        
     //5 day forecast
 
@@ -65,6 +107,8 @@ $.ajax({
         method: 'GET',
     }).then(function (response) {
         console.log('response:', response);
+
+
 
 
         //days
@@ -156,5 +200,5 @@ $.ajax({
 
 })
 
-//})
+})
 });
