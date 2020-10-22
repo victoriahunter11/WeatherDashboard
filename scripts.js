@@ -19,7 +19,7 @@ var historyList = JSON.parse(localStorage.getItem('cityList')) || [];
 console.log('not push yet',historyList);
 historyList.push(cityName);
 
-// how do you set historyList to local storage?
+// Setting history to local storage
 
 localStorage.setItem('cityList', JSON.stringify(historyList))
 console.log('push',historyList)
