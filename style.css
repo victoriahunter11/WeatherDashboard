@@ -8,6 +8,7 @@
    }
    .border{
        padding: 10px;
+       border-radius:6px;
    }
 
    .cityLists {
@@ -37,7 +38,7 @@
        width:55%;
        border-style: solid;
        background-color:white;
-       border-radius: 3px;
+       border-radius: 6px;
        padding:30px;
        font-size: large;
        
