@@ -5,6 +5,11 @@
     font-family: 'Raleway', sans-serif;
 
    }
+
+   h2 {
+
+    font-family: 'Raleway', sans-serif;
+   }
    body {
        background-color: rgb(238, 239, 241)
    }
@@ -48,6 +53,8 @@
 
    #searchForm {
        width:40%;
+
+    font-family: 'Raleway', sans-serif;
    }
 
 
