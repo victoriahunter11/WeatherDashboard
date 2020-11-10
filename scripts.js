@@ -29,7 +29,7 @@ console.log('push',historyList)
 
 
 //Weather API
-var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' +cityName + '&appid=6db34ef713e549526f3d19aba8df78ca'
+var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' +cityName + '&appid=6db34ef713e549526f3d19aba8df78ca&units=imperial'
 
 
 console.log('queryURL:', queryURL);
